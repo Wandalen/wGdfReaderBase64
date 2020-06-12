@@ -2,13 +2,10 @@ format: outwillfile-2.0
 root:
   - wGdfReaderBase64.out
 consistency:
-  wGdfReaderBase64.out.will.yml: &ref_0
-    hash: e9427d56ea704c568135eb1290e47fa0
-    size: 36892
-  ../.ex.will.yml: &ref_1
-    hash: 3652ae22c44c2c1dd733eb3b03e3b31f
-    size: 1708
-  ../.im.will.yml: &ref_2
+  ../.ex.will.yml: &ref_0
+    hash: ea0d935ec532a81dab7b4f2b6db9a1ff
+    size: 1709
+  ../.im.will.yml: &ref_1
     hash: 4bd2ad8e081461ac0a9600e6aa2abea9
     size: 4662
 module:
@@ -19,19 +16,19 @@ module:
       description: ___
       enabled: 1
       version: 0.4.0
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_3
         - tools
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wgdfreaderbase64
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -675,24 +672,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -781,9 +760,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wGdfReaderBase64.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wGdfReaderBase64
@@ -791,21 +769,13 @@ module:
       description: ___
       enabled: 1
       version: 0.4.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - tools
-        - wTools
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_4
       npm.name: wgdfreaderbase64
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -1453,11 +1423,8 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: 3652ae22c44c2c1dd733eb3b03e3b31f
-        size: 1708
+        hash: ea0d935ec532a81dab7b4f2b6db9a1ff
+        size: 1709
       ../.im.will.yml:
         hash: 4bd2ad8e081461ac0a9600e6aa2abea9
         size: 4662
-      wGdfReaderBase64.out.will.yml:
-        hash: e9427d56ea704c568135eb1290e47fa0
-        size: 36892
