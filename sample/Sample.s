@@ -3,5 +3,5 @@ let _ = require( 'wgdfreaderbase64' );
 
 /**/
 
-___
+console.log( '___ not implemented ___' );
 
